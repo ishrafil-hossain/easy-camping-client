@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Motorhome",
+        "img": "https://i.ibb.co/mvgrm35/Modern-25-Feet-Travel-Trailer-Camping-in-the-Forest-Evening-Dusk-Photography-Recreation-Photo-Collec.jpg",
+        "description": "Motorhome camping with over 1000 motorhome sites within our camping network we offer campsites with top of the range facilities in a variety of regions across the UK and Europe.Many of our campsites have electric pitches, motorhome service points and battery charging facilities.",
+        "price": 20,
+        "person": "4-6"
+    },
+    {
+        "id": 2,
+        "name": "Luxery Tent",
+        "img": "https://i.ibb.co/Pr2m3rp/2-Luxery-Tent.jpg",
+        "description": "Luxery Tent camping with over 1000 Luxery Tent sites within our camping network we offer campsites with top of the range facilities in a variety of regions across the UK and Europe.Many of our campsites have electric pitches, motorhome service points and battery charging facilities.",
+        "price": 15,
+        "person": "2-3"
+    },
+    {
+        "id": 3,
+        "name": "Classic-Tent",
+        "img": "https://i.ibb.co/3vKDMNG/3-Classic-Tent.jpg",
+        "description": "Classic-Tent camping with over 1000 Classic-Tent sites within our camping network we offer campsites with top of the range facilities in a variety of regions across the UK and Europe.Many of our campsites have electric pitches, motorhome service points and battery charging facilities.",
+        "price": 12,
+        "person": "2-3"
+    },
+    {
+        "id": 4,
+        "name": "Tent",
+        "img": "https://i.ibb.co/m9pL3xW/4-Tent.jpg",
+        "description": "Tent camping with over 1000 tent sites within our camping network we offer campsites with top of the range facilities in a variety of regions across the UK and Europe.Many of our campsites have electric pitches, motorhome service points and battery charging facilities.",
+        "price": 20,
+        "person": "1-2"
+    },
+    {
+        "id": 5,
+        "name": "Forest",
+        "img": "https://i.ibb.co/Lpymwnn/Relaxing-mature-Hispanic-couple-camping-in-the-wilderness-Relaxing-family-time.jpg",
+        "description": "Forest camping with over 1000 forest sites within our camping network we offer campsites with top of the range facilities in a variety of regions across the UK and Europe.Many of our campsites have electric pitches, motorhome service points and battery charging facilities.",
+        "price": 10,
+        "person": "2-3"
+    },
+    {
+        "id": 6,
+        "name": "Small Trailer",
+        "img": "https://i.ibb.co/gdypSkz/Glamping-campsite-in-the-forest-Big-camping-tent-for-luxury-outdoor-vacation-Staycations-hyper-local.jpg",
+        "description": "Small Trailer camping with over 1000 small trailer sites within our camping network we offer campsites with top of the range facilities in a variety of regions across the UK and Europe.Many of our campsites have electric pitches, motorhome service points and battery charging facilities.",
+        "price": 8,
+        "person": "1-2"
+    }
+]
