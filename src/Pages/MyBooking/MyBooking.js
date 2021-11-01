@@ -7,7 +7,7 @@ const MyBooking = () => {
     const [bookings, setBookings] = useState([]);
     const { user } = useAuth({});
     useEffect(() => {
-        fetch(`http://localhost:5000/myBooking/${email}`)
+        fetch(`https://calm-springs-95190.herokuapp.com/myBooking/${email}`)
             .then(res => res.json())
             .then(data => setBookings(data))
     }, [email]);
@@ -17,7 +17,7 @@ const MyBooking = () => {
     const handleDelete = id => {
         const confirm = window.confirm('Are you sure to delete booking?');
         if (confirm) {
-            fetch(`http://localhost:5000/myBooking/${id}`, {
+            fetch(`https://calm-springs-95190.herokuapp.com/myBooking/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

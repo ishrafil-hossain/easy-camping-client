@@ -7,7 +7,7 @@ const Booking = () => {
     const [booking, setBooking] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/offers/${bookingId}`)
+        fetch(`https://calm-springs-95190.herokuapp.com/offers/${bookingId}`)
             .then(res => res.json())
             .then(data => setBooking(data));
     }, []);
@@ -21,7 +21,7 @@ const Booking = () => {
         data.email = "ishrafil2233@gmail.com";
 
         // console.log(data);
-        fetch("http://localhost:5000/addBooking", {
+        fetch("https://calm-springs-95190.herokuapp.com/addBooking", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data)
