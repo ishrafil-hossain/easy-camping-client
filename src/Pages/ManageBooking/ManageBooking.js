@@ -1,57 +1,58 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import useAuth from '../../hooks/useAuth';
+
 
 const ManageBooking = () => {
-    const [offers, setOffers] = useState([]);
-
+    const email = "ishrafil2233@gmail.com";
+    const [bookings, setBookings] = useState([]);
+    const { user } = useAuth({});
     useEffect(() => {
-        fetch('https://calm-springs-95190.herokuapp.com/offers')
+        fetch(`https://calm-springs-95190.herokuapp.com/myBooking/${email}`)
             .then(res => res.json())
-            .then(data => setOffers(data))
-    }, []);
+            .then(data => setBookings(data))
+    }, [email]);
 
+    // delete button function 
+    // console.log(bookings);
     const handleDelete = id => {
-        const url = `https://calm-springs-95190.herokuapp.com/offers/${id}`;
-        fetch(url, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data);
-                if (data.deletedCount) {
-                    window.confirm("Are you sure want to delete this item...?");
-                    const remaining = offers.filter(offer => offer._id !== id);
-                    setOffers(remaining);
-                }
-
+        const confirm = window.confirm('Are you sure to delete booking?');
+        if (confirm) {
+            fetch(`https://calm-springs-95190.herokuapp.com/myBooking/${id}`, {
+                method: 'DELETE'
             })
-    }
+                .then(res => res.json())
+                .then(data => {
+                    const remaining = bookings.filter(booking => booking._id !== id);
+                    setBookings(remaining);
 
+                })
+
+        }
+
+    }
     return (
         <div>
-            <h2 className="mt-5 mb-5">Manage Your Offers</h2>
-            {
-                offers.map(offer => <div
-                    key={offer._id}
-                    offer={offer}
-                    className="row row-cols-1 row-cols-md-2 g-1 m-2 mb-5">
-                    <div className="container col">
-                        <div className="card border rounded-3 shadow p-3 mb-5 bg-body h-100">
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>{offer.name}</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                                    <Card.Img src={offer.img} alt="Card image" />
-                                    <Card.Text></Card.Text>
-                                    <Button onClick={() => handleDelete(offer._id)} variant="danger me-5">Delete</Button>
-                                    <Button variant="success">Update</Button>
+            <h2 className="mt-5">Manage Booking List </h2>
+            <ol className="d-flex justify-content-center shadow-lg p-3 mb-5 bg-white rounded m-5">
+                <div>
+                    {
+                        bookings.map(booking => <div striped bordered hover size="sm" className="text-start">
+                            <h2> <li>Name : {booking.name}</li></h2>
+                            <p>Price : ${booking.price}</p>
+                            <p>Person :{booking.person}</p>
+                            <div>
+                                <Button
+                                    variant="warning me-2">Accept</Button>
+                                <Button
+                                    variant="success me-2">Update</Button>
+                                <Button onClick={() => handleDelete(booking?._id)} variant="danger">Delete</Button>
+                            </div>
+                        </div>)
+                    }
+                </div>
+            </ol>
 
-                                </Card.Body>
-                            </Card>
-                        </div>
-                    </div>
-                </div>)
-            }
         </div>
     );
 };
