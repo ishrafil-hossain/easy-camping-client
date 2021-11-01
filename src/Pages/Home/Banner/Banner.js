@@ -12,7 +12,7 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3 >Not Just Better Care, But A Better Experience</h3>
+                        <h3 >Camping is the best way to enjoy the Great Outdoors</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -23,7 +23,7 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Better doctor, Better treatement</h3>
+                        <h3>Camping – because therapy is expensive</h3>
 
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -35,7 +35,7 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Better doctor, Better treatement</h3>
+                        <h3>I Don’t Need Therapy, I Just Need To Go Camping</h3>
 
                     </Carousel.Caption>
                 </Carousel.Item>

@@ -10,7 +10,27 @@ const Booking = () => {
         fetch(`http://localhost:5000/offers/${bookingId}`)
             .then(res => res.json())
             .then(data => setBooking(data));
-    }, [])
+    }, []);
+
+
+    // confirm booking 
+    const handleAddToMyBooking = () => {
+
+        const data = booking;
+
+        data.email = "ishrafil2233@gmail.com";
+
+        // console.log(data);
+        fetch("http://localhost:5000/addBooking", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(data)
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                alert("Booked Successfully!");
+            });
+    }
     return (
         <div>
             <h2>Details of {booking.name}</h2>
@@ -54,7 +74,7 @@ const Booking = () => {
                                 <Form.Control className="w-100" type="text" placeholder="Phone number" />
                             </Form.Group>
 
-                            <Button variant="primary">Confirm Booking</Button>
+                            <Button onClick={handleAddToMyBooking} variant="primary">Confirm Booking</Button>
 
                         </Form>
                     </div>
