@@ -1,5 +1,7 @@
 # Easy Camping
 
+# Easy Camping is a web based application
+
 ##### Live Site Link [EasyCamping](https://easy-camping-a85e8.web.app/home#home).
 
 
